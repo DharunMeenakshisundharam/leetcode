@@ -1,0 +1,35 @@
+class Solution {
+    public int addDigits(int num) 
+    {
+
+        int re=0,sum=0;
+        if(num==0)
+        {
+            return 0;
+        }
+        else
+        {
+            while(true)
+            {
+                while(num>0)
+                {
+                    re=num%10;
+                    sum+=re;
+                    num=num/10;
+                }
+                if(sum/10==0)
+                {
+                    return sum;
+                }
+                else
+                {
+                    num=sum;
+                    sum=0;
+                }
+
+
+            }
+        }
+        
+    }
+}
