@@ -1,0 +1,23 @@
+class Solution {
+    public int removeDuplicates(int[] nums) 
+    {
+        HashSet<Integer> h = new HashSet<Integer>();
+        for(int i=0;i<nums.length;i++)
+        {
+            h.add(nums[i]);
+        }
+        Iterator <Integer> it= h.iterator();
+        int v=0;
+        int a[] = new int [h.size()];
+        while(it.hasNext())
+        {
+            a[v++]=it.next();
+        }
+        Arrays.sort(a);
+        for(int i=0;i<a.length;i++)
+        {
+            nums[i]=a[i];
+        }
+        return h.size();
+    }
+}
